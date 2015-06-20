@@ -34,4 +34,5 @@ dependencies {
     androidTestCompile 'com.android.support.test:runner:0.2'
     androidTestCompile 'com.android.support.test:rules:0.2'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2'
+    compile project(':core')
 }
