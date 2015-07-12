@@ -45,7 +45,14 @@ public class DrawView extends View {
   @Override
   public boolean onTouchEvent(MotionEvent event) {
     System.out.println(event);
-    drawSpike.addPoint(event.getX(), event.getY());
+    switch (event.getAction()) {
+      case MotionEvent.ACTION_MOVE:
+        drawSpike.addPoint(event.getX(), event.getY());
+          break;
+        case MotionEvent.ACTION_UP:
+            drawSpike.addPoint(0, 0);
+            break;
+    }
     this.invalidate();
     return true;
   }
