@@ -29,4 +29,9 @@ public class DrawActivityTest {
         onView(withId(R.id.drawView)).check(matches(isDisplayed()));
     }
 
+    @Test
+    public void testActionBarMenu(){
+        onView(withId(R.id.colorpicker)).check(matches(isDisplayed()));
+    }
+
 }
