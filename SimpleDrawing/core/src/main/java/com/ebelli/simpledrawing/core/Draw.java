@@ -34,11 +34,23 @@ public class Draw {
 
   public void drawOn(CoreCanvas coreCanvas) {
       if (mLines.size()>0) {
-          for (int i = 1; i < mLines.get(mLineCount - 1).size(); i++) {
-              CorePoint p0 = mLines.get(mLineCount - 1).get(i - 1);
-              CorePoint p1 = mLines.get(mLineCount - 1).get(i);
-              coreCanvas.drawLine(p0.x, p0.y, p1.x, p1.y);
+          for (List<CorePoint> line : mLines){
+              for (int i = 1; i < line.size(); i++) {
+                  CorePoint p0 = line.get(i - 1);
+                  CorePoint p1 = line.get(i);
+                  coreCanvas.drawLine(p0.x, p0.y, p1.x, p1.y, p0.color, p0.stroke);
+              }
           }
       }
   }
+
+    public void addPoint(float x, float y, int color, float stroke) {
+        if (mLines.size()<mLineCount){
+            ArrayList<CorePoint> line = new ArrayList<CorePoint>();
+            line.add(new CorePoint(x, y,color,stroke));
+            mLines.add(line);
+        }else {
+            mLines.get(mLineCount-1).add(new CorePoint(x, y));
+        }
+    }
 }

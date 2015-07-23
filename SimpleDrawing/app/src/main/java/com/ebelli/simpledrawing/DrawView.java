@@ -9,6 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.ebelli.simpledrawing.core.CoreCanvas;
+import com.ebelli.simpledrawing.core.CorePoint;
 import com.ebelli.simpledrawing.core.Draw;
 
 
@@ -32,11 +33,11 @@ public class DrawView extends View {
   @Override
   protected void onDraw(final Canvas canvas) {
 
-    paint.setColor(Color.BLUE);
-    paint.setStrokeWidth(8);
     drawSpike.drawOn(new CoreCanvas() {
       @Override
-      public void drawLine(int x0, int y0, int x1, int y1) {
+      public void drawLine(int x0, int y0, int x1, int y1, int color, float stroke) {
+        paint.setColor(color);
+        paint.setStrokeWidth(stroke);
         canvas.drawLine(x0, y0, x1, y1, paint);
       }
     });
@@ -47,10 +48,10 @@ public class DrawView extends View {
     System.out.println(event);
     switch (event.getAction()) {
       case MotionEvent.ACTION_MOVE:
-        drawSpike.addPoint(event.getX(), event.getY());
+        drawSpike.addPoint(event.getX(), event.getY(), CorePoint.BLACK,CorePoint.STROKE);
           break;
-        case MotionEvent.ACTION_UP:
-            drawSpike.addPoint(0, 0);
+        case MotionEvent.ACTION_DOWN:
+            drawSpike.addLine();
             break;
     }
     this.invalidate();
