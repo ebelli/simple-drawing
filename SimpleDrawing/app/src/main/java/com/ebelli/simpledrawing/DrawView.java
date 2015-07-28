@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -15,8 +16,8 @@ import com.ebelli.simpledrawing.core.Draw;
 
 public class DrawView extends View {
   private Draw drawSpike = new Draw();
-
   final Paint paint = new Paint();
+  int color = CorePoint.BLACK;
 
   public DrawView(Context context, AttributeSet attrs, int defStyle) {
     super(context, attrs, defStyle);
@@ -48,7 +49,7 @@ public class DrawView extends View {
     System.out.println(event);
     switch (event.getAction()) {
       case MotionEvent.ACTION_MOVE:
-        drawSpike.addPoint(event.getX(), event.getY(), CorePoint.BLACK,CorePoint.STROKE);
+        drawSpike.addPoint(event.getX(), event.getY(), color,CorePoint.STROKE);
           break;
         case MotionEvent.ACTION_DOWN:
             drawSpike.addLine();
@@ -56,5 +57,9 @@ public class DrawView extends View {
     }
     this.invalidate();
     return true;
+  }
+
+  public void setColor(int color){
+    this.color = color;
   }
 }

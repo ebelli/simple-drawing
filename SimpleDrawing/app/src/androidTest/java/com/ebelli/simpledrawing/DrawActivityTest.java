@@ -45,7 +45,10 @@ public class DrawActivityTest {
         onView(withId(R.id.action_colorpicker)).perform(click());
         allOf(isDisplayed(), is(instanceOf(AmbilWarnaDialog.class)));
 
-
     }
+
+    @Test
+    public void testSetColor(){
+        }
 
 }

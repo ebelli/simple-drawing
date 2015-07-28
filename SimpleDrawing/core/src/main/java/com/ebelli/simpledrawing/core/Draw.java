@@ -50,7 +50,7 @@ public class Draw {
             line.add(new CorePoint(x, y,color,stroke));
             mLines.add(line);
         }else {
-            mLines.get(mLineCount-1).add(new CorePoint(x, y));
+            mLines.get(mLineCount-1).add(new CorePoint(x, y,color,stroke));
         }
     }
 }
