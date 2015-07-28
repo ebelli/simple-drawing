@@ -38,6 +38,7 @@ public class DrawActivityTest {
     @Test
     public void testActionBarMenu(){
         onView(withId(R.id.action_colorpicker)).check(matches(isDisplayed()));
+        onView(withId(R.id.action_save)).check(matches(isDisplayed()));
     }
 
     @Test

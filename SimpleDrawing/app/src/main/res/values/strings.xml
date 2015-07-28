@@ -3,6 +3,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_draw">DrawActivity</string>
+    <string name="title_activity_draw"></string>
     <string name="color_picker">Color Picker</string>
+    <string name="action_saver">Save</string>
 </resources>
