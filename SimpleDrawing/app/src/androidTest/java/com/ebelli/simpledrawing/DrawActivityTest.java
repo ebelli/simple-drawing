@@ -52,4 +52,8 @@ public class DrawActivityTest {
     public void testSetColor(){
         }
 
+    @Test
+    public void testExternalDir(){
+
+    }
 }
