@@ -28,6 +28,7 @@ public class MainActivityTest {
     @Test
     public void testViews(){
         onView(withId(R.id.fabNew)).check(matches(isDisplayed()));
+        onView(withId(R.id.rvDrawings)).check(matches(isDisplayed()));
     }
 
     @Test
