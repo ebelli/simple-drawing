@@ -62,4 +62,9 @@ public class DrawView extends View {
   public void setColor(int color){
     this.color = color;
   }
+
+  public void clear(){
+    drawSpike.clear();
+      this.invalidate();
+  }
 }

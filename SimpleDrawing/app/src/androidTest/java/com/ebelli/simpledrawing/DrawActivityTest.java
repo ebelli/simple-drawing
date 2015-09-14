@@ -39,6 +39,7 @@ public class DrawActivityTest {
     public void testActionBarMenu(){
         onView(withId(R.id.action_colorpicker)).check(matches(isDisplayed()));
         onView(withId(R.id.action_save)).check(matches(isDisplayed()));
+        onView(withId(R.id.action_clear)).check(matches(isDisplayed()));
     }
 
     @Test
@@ -53,7 +54,9 @@ public class DrawActivityTest {
         }
 
     @Test
-    public void testExternalDir(){
-
+    public void testSaveDrawing(){
+        onView(withId(R.id.action_save)).perform(click());
+        allOf(isDisplayed(), is(instanceOf(MainActivity.class)));
     }
+
 }

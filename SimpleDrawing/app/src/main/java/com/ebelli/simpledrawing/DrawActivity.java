@@ -88,6 +88,8 @@ public class DrawActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        } else if (id == R.id.action_clear) {
+            drawView.clear();
         }
 
         return super.onOptionsItemSelected(item);

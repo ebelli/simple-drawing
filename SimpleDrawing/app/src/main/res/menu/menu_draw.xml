@@ -8,4 +8,7 @@
     <item android:id="@+id/action_save" android:title="@string/action_saver"
         android:icon="@drawable/ic_save_white_24dp"
         android:orderInCategory="20" app:showAsAction="always" />
+    <item android:id="@+id/action_clear" android:title="@string/action_saver"
+        android:icon="@drawable/ic_clear_white_24dp"
+        android:orderInCategory="30" app:showAsAction="always" />
 </menu>

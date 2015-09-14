@@ -21,6 +21,7 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int NEW_DRAWING = 101;
     @InjectView(R.id.fabNew) FloatingActionButton fabNew;
     @InjectView(R.id.rvDrawings) RecyclerView rvDrawings;
     private GridLayoutManager mLayoutManager;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.fabNew)
     public void newDraw(){
         Intent i = new Intent(this,DrawActivity.class);
-        startActivity(i);
+        startActivityForResult(i, NEW_DRAWING);
     }
 
     @Override

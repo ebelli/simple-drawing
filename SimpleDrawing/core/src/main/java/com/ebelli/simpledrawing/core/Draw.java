@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.List;
 
 public class Draw {
-//  private List<CorePoint> points = new ArrayList<>();
   private List<List<CorePoint>> mLines = new ArrayList<>();
   private int mLineCount;
 
@@ -52,5 +51,10 @@ public class Draw {
         }else {
             mLines.get(mLineCount-1).add(new CorePoint(x, y,color,stroke));
         }
+    }
+
+    public void clear(){
+        mLines.clear();
+        mLineCount=1;
     }
 }
