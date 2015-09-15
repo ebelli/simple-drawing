@@ -1,5 +1,6 @@
 package com.ebelli.simpledrawing;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Environment;
@@ -75,12 +76,17 @@ public class DrawActivity extends AppCompatActivity {
                             Log.e("SimpleDrawning", "Directory not created");
                         }
                     }
-                    FileOutputStream fos = new FileOutputStream(file.getAbsolutePath() + "/" + timeStamp + ".jpg");
+                    String filename= file.getAbsolutePath() + "/" + timeStamp + ".jpg";
+                    FileOutputStream fos = new FileOutputStream(filename);
                     if (!b.compress(Bitmap.CompressFormat.JPEG, 85, fos)){
                         Log.e("SimpleDrawning", "Compress failed");
+                    } else {
+                        Intent data = new Intent();
+                        data.putExtra("file_name", filename);
+                        setResult(RESULT_OK, data);
+                        fos.flush();
+                        fos.close();
                     }
-                    fos.flush();
-                    fos.close();
                     finish();
                 }
             } catch (FileNotFoundException e) {

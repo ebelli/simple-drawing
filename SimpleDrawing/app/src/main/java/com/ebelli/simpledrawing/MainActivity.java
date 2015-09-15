@@ -21,7 +21,7 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int NEW_DRAWING = 101;
+    private static final int NEW_DRAWING = 1;
     @InjectView(R.id.fabNew) FloatingActionButton fabNew;
     @InjectView(R.id.rvDrawings) RecyclerView rvDrawings;
     private GridLayoutManager mLayoutManager;
@@ -48,6 +48,18 @@ public class MainActivity extends AppCompatActivity {
             mAdapterDrawings.add(drawing.getAbsolutePath());
         }
         rvDrawings.setAdapter(mAdapterDrawings);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == NEW_DRAWING) {
+            // Make sure the request was successful
+            if (resultCode == RESULT_OK) {
+                //Update Gallery
+                mAdapterDrawings.add(data.getStringExtra("file_name"));
+                mAdapterDrawings.notifyDataSetChanged();
+            }
+        }
     }
 
     @Override
