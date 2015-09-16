@@ -1,5 +1,6 @@
 package com.ebelli.simpledrawing.adapters;
 
+import android.app.FragmentManager;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,16 +17,18 @@ import java.util.List;
  * Created by ebelli on 11/09/15.
  */
 public class DrawingsAdapter extends RecyclerView.Adapter<DrawingsViewHolder> {
+    private FragmentManager mFragmentManager;
     private List<String> drawings;
 
-    public DrawingsAdapter() {
+    public DrawingsAdapter(FragmentManager fragmentManager) {
+        mFragmentManager = fragmentManager;
         this.drawings = new ArrayList<String>();
     }
 
     @Override
     public DrawingsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View drawingView = LayoutInflater.from(parent.getContext()).inflate(R.layout.drawing,parent,false);
-        return new DrawingsViewHolder(drawingView);
+        return new DrawingsViewHolder(drawingView,mFragmentManager);
     }
 
     @Override
@@ -33,6 +36,7 @@ public class DrawingsAdapter extends RecyclerView.Adapter<DrawingsViewHolder> {
         String drawing = drawings.get(i);
       //  holder.tvTitle.setText(drawing);
         holder.ivDrawing.setImageURI(Uri.parse(drawing));
+        holder.path = drawing;
        // Picasso.with(holder.ivDrawing.getContext()).load(drawing).into(holder.ivDrawing);
     }
 
