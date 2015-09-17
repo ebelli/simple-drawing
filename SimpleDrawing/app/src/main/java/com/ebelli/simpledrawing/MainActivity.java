@@ -79,10 +79,12 @@ public class MainActivity extends AppCompatActivity implements DeleteDrawingDial
         //Delete the Drawing
         Log.d("Drawing",drawing);
         if (new File(drawing).delete()){
+            mAdapterDrawings.remove(drawing);
             Snackbar.make(coordinatolayout,R.string.snackbar_delete_text,Snackbar.LENGTH_SHORT).show();
         } else{
             Snackbar.make(coordinatolayout,R.string.snackbar_delete_failed_text,Snackbar.LENGTH_SHORT).show();
         }
+        mAdapterDrawings.notifyDataSetChanged();
 
     }
 

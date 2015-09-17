@@ -49,4 +49,8 @@ public class DrawingsAdapter extends RecyclerView.Adapter<DrawingsViewHolder> {
         drawings.add(drawing);
         return drawings.size();
     }
+
+    public boolean remove (String drawing){
+        return drawings.remove(drawing);
+    }
 }
