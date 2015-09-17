@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Simple Drawing</string>
+    <string name="action_saver">Salva</string>
+    <string name="action_settings">Opzioni</string>
+    <string name="color_picker">Scegli Colore</string>
+    <string name="dialog_cancel">ANNULLA</string>
+    <string name="dialog_delete">OK</string>
+    <string name="dialog_delete_text">Vuoi cancellare il disegno selezionato?</string>
+    <string name="snackbar_delete_failed_text">Impossibile cancellare</string>
+    <string name="snackbar_delete_text">Disegno cancellato</string>
+</resources>

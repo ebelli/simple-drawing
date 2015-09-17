@@ -50,8 +50,10 @@ public class MainActivity extends AppCompatActivity implements DeleteDrawingDial
 
         mAdapterDrawings = new DrawingsAdapter(getFragmentManager());
         File[] drawings = Utilities.getDir().listFiles();
-        for (File drawing: drawings) {
-            mAdapterDrawings.add(drawing.getAbsolutePath());
+        if (Utilities.getDir().exists()) {
+            for (File drawing : drawings) {
+                mAdapterDrawings.add(drawing.getAbsolutePath());
+            }
         }
         rvDrawings.setAdapter(mAdapterDrawings);
     }
