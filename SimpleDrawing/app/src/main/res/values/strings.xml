@@ -10,4 +10,6 @@
     <string name="dialog_cancel">CANCEL</string>
     <string name="snackbar_delete_text">Drawing deleted</string>
     <string name="snackbar_delete_failed_text">Delete failed</string>
+    <string name="action_clear">Clear</string>
+    <string name="action_fill">Fill</string>
 </resources>

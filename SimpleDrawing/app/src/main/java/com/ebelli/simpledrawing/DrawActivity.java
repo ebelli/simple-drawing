@@ -62,6 +62,8 @@ public class DrawActivity extends AppCompatActivity {
         if (id == R.id.action_colorpicker) {
             colorPicker.show();
             return true;
+        } else if (id == R.id.action_fill){
+            drawView.setBackgroundColor(drawView.getColor());
         } else if (id == R.id.action_save) {
             drawView.setDrawingCacheEnabled(true);
             Bitmap b = Bitmap.createBitmap(drawView.getDrawingCache());
@@ -96,6 +98,7 @@ public class DrawActivity extends AppCompatActivity {
             }
         } else if (id == R.id.action_clear) {
             drawView.clear();
+            drawView.setBackgroundColor(Color.WHITE);
         }
 
         return super.onOptionsItemSelected(item);

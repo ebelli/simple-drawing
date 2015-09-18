@@ -40,6 +40,7 @@ public class DrawActivityTest {
         onView(withId(R.id.action_colorpicker)).check(matches(isDisplayed()));
         onView(withId(R.id.action_save)).check(matches(isDisplayed()));
         onView(withId(R.id.action_clear)).check(matches(isDisplayed()));
+        onView(withId(R.id.action_fill)).check(matches(isDisplayed()));
     }
 
     @Test
@@ -50,7 +51,8 @@ public class DrawActivityTest {
     }
 
     @Test
-    public void testSetColor(){
+    public void testSetBackgroundColor(){
+//        onView(withId(R.id.drawView)).check(matches())
         }
 
     @Test
