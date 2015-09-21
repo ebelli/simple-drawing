@@ -13,5 +13,5 @@
         android:orderInCategory="30" app:showAsAction="always" />
     <item android:id="@+id/action_save" android:title="@string/action_saver"
         android:icon="@drawable/ic_save_white_24dp"
-        android:orderInCategory="40" app:showAsAction="ifRoom" />
+        android:orderInCategory="40" app:showAsAction="always" />
 </menu>

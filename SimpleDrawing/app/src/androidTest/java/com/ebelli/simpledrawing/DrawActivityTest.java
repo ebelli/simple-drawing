@@ -1,9 +1,11 @@
 package com.ebelli.simpledrawing;
 
+import android.graphics.Color;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
 
+import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,9 +14,12 @@ import yuku.ambilwarna.AmbilWarnaDialog;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.scrollTo;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static com.ebelli.simpledrawing.matchers.BackgroundColorMatchers.withBackGroundColor;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.instanceOf;
@@ -52,13 +57,15 @@ public class DrawActivityTest {
 
     @Test
     public void testSetBackgroundColor(){
-//        onView(withId(R.id.drawView)).check(matches())
-        }
+        onView(withId(R.id.drawView)).check(matches(withBackGroundColor(Color.WHITE)));
+        onView(withId(R.id.action_fill)).perform(click());
+        onView(withId(R.id.drawView)).check(matches(withBackGroundColor(Color.BLACK)));
+    }
 
     @Test
     public void testSaveDrawing(){
+        onView(withId(R.id.drawView)).perform(scrollTo());
         onView(withId(R.id.action_save)).perform(click());
         allOf(isDisplayed(), is(instanceOf(MainActivity.class)));
     }
-
 }
