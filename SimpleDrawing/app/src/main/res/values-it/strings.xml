@@ -9,4 +9,6 @@
     <string name="dialog_delete_text">Vuoi cancellare il disegno selezionato?</string>
     <string name="snackbar_delete_failed_text">Impossibile cancellare</string>
     <string name="snackbar_delete_text">Disegno cancellato</string>
+    <string name="action_clear">Cancella</string>
+    <string name="action_fill">Riempi</string>
 </resources>

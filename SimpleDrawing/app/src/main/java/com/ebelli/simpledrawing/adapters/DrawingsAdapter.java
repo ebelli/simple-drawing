@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.ebelli.simpledrawing.R;
 
 import java.util.ArrayList;
@@ -34,9 +35,8 @@ public class DrawingsAdapter extends RecyclerView.Adapter<DrawingsViewHolder> {
     public void onBindViewHolder(DrawingsViewHolder holder, int i) {
         String drawing = drawings.get(i);
       //  holder.tvTitle.setText(drawing);
-        holder.ivDrawing.setImageURI(Uri.parse(drawing));
         holder.path = drawing;
-       // Picasso.with(holder.ivDrawing.getContext()).load(drawing).into(holder.ivDrawing);
+       Glide.with(holder.ivDrawing.getContext()).load(drawing).into(holder.ivDrawing);
     }
 
     @Override
