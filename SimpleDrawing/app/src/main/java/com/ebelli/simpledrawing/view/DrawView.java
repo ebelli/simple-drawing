@@ -1,4 +1,4 @@
-package com.ebelli.simpledrawing;
+package com.ebelli.simpledrawing.view;
 
 import android.content.Context;
 import android.graphics.Canvas;

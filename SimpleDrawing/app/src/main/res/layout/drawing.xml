@@ -13,6 +13,8 @@
         card_view:cardElevation="0.01dp"
         android:layout_marginBottom="0dp">
     <RelativeLayout
+        android:clickable="true"
+        android:background="?android:selectableItemBackground"
         android:id="@+id/top_layout"
         android:layout_width="165dp"
         android:layout_height="160dp">

@@ -11,4 +11,5 @@
     <string name="snackbar_delete_text">Disegno cancellato</string>
     <string name="action_clear">Cancella</string>
     <string name="action_fill">Riempi</string>
+    <string name="action_delete">Cancella</string>
 </resources>

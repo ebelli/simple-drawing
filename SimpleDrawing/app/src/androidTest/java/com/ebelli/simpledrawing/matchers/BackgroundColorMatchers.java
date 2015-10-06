@@ -5,7 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.test.espresso.matcher.BoundedMatcher;
 import android.view.View;
 
-import com.ebelli.simpledrawing.DrawView;
+import com.ebelli.simpledrawing.view.DrawView;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;

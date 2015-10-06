@@ -1,4 +1,4 @@
-package com.ebelli.simpledrawing;
+package com.ebelli.simpledrawing.view;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+
+import com.ebelli.simpledrawing.R;
+import com.ebelli.simpledrawing.Utilities;
 
 import java.io.File;
 import java.io.FileNotFoundException;

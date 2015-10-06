@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.ebelli.simpledrawing.DrawActivity">
+    tools:context="com.ebelli.simpledrawing.view.DrawActivity">
     <item android:id="@+id/action_colorpicker" android:title="@string/color_picker"
         android:icon="@drawable/ic_colorize_white_24dp"
         android:orderInCategory="10" app:showAsAction="always" />
