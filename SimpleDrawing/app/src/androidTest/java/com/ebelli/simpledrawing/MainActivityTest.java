@@ -42,6 +42,7 @@ public class MainActivityTest {
         onView(withId(R.id.action_save)).perform(click());
 //        onData(anything()).inAdapterView(withId(R.id.rvDrawings)).atPosition(0).check(matches(isDisplayed()));
         onView(withId(R.id.rvDrawings)).perform(RecyclerViewActions.actionOnItemAtPosition(0, longClick()));
+        onView(withId(R.id.action_delete)).perform(click());
         onView(withId(android.R.id.button1)).perform(click());
     }
 
