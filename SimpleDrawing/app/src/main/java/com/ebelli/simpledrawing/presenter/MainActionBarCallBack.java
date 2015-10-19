@@ -15,16 +15,17 @@ import com.ebelli.simpledrawing.dialogs.DeleteDrawingDialog;
  */
 public class MainActionBarCallBack implements ActionMode.Callback {
     private final FragmentManager mFragmentManager;
-    private final String mPath;
+    private String mPath;
+    private ActionMode mActionMode;
 
-    public MainActionBarCallBack(FragmentManager fragmentManager, String path) {
-        mPath = path;
+    public MainActionBarCallBack(FragmentManager fragmentManager) {
         mFragmentManager = fragmentManager;
     }
 
     @Override
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
         mode.getMenuInflater().inflate(R.menu.menu_main_cab,menu);
+        mActionMode = mode;
         return true;
     }
 
@@ -50,5 +51,17 @@ public class MainActionBarCallBack implements ActionMode.Callback {
     @Override
     public void onDestroyActionMode(ActionMode mode) {
 
+    }
+
+    public String getPath() {
+        return mPath;
+    }
+
+    public void setPath(String mPath) {
+        this.mPath = mPath;
+    }
+
+    public ActionMode getActionMode() {
+        return mActionMode;
     }
 }

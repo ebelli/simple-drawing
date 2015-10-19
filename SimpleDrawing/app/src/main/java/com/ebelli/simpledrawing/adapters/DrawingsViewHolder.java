@@ -20,21 +20,24 @@ public class DrawingsViewHolder extends RecyclerView.ViewHolder{
     @InjectView(R.id.ivDrawing)  ImageView ivDrawing;
     String path;
     private FragmentManager mFragmentManager;
+    private MainActionBarCallBack mMainActionBarCallBack;
     private View mItemView;
-    public ActionMode mActionMode;
+
 
 //    @InjectView(R.id.tvTitle) TextView tvTitle;
 
     @OnLongClick(R.id.ivDrawing)
     public boolean deleteDrawing(){
-        mActionMode = itemView.startActionMode(new MainActionBarCallBack(mFragmentManager,path));
+        mMainActionBarCallBack.setPath(path);
+        itemView.startActionMode(mMainActionBarCallBack);
         return true;
     }
 
-    public DrawingsViewHolder(View itemView, FragmentManager fragmentManager) {
+    public DrawingsViewHolder(View itemView, FragmentManager fragmentManager, MainActionBarCallBack mainActionBarCallBack) {
         super(itemView);
         mItemView = itemView;
         mFragmentManager = fragmentManager;
+        mMainActionBarCallBack = mainActionBarCallBack;
         ButterKnife.inject(this,itemView);
     }
 
